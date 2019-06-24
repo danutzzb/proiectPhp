@@ -28,4 +28,4 @@ if(mysqli_num_rows($data)==1){
 
 mysqli_fetch_array($data);
 
-var_dump($data);
+
