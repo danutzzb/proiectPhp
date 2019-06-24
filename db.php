@@ -15,7 +15,6 @@ if(mysqli_query($conn, $add)){
 else{
     echo 'error';
 }
-var_dump($conn);
 
         
       
