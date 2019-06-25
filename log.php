@@ -14,7 +14,7 @@ if (mysqli_num_rows($result) == 1){
     $row = mysqli_fetch_array($result);
     
     $email = $row['email'];
-    
+
     echo 'User ' . $email . ' is now logged in';
 }
 else {
