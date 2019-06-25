@@ -9,7 +9,7 @@ $psw = hash('sha256', $pass);
 }
 $query = "SELECT email FROM users WHERE email = '$user' AND password ='$psw'";
 $result = mysqli_query($conn, $query);
-var_dump($result);
+
 if (mysqli_num_rows($result) == 1){
     $row = mysqli_fetch_array($result);
     
