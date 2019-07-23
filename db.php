@@ -3,19 +3,26 @@ require_once 'config.php';
 
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
+$prenume = mysqli_real_escape_string($conn,$_POST['prenume']);
+$nume = mysqli_real_escape_string($conn,$_POST['nume']);
 $user = mysqli_real_escape_string($conn,$_POST['email']);
 $pass = mysqli_real_escape_string($conn,$_POST['psw']);
 $psw = hash('sha256', $pass);
 
-$add = "INSERT INTO users(user,password)VALUES('$user', '$psw')";
-if(mysqli_query($conn, $add)){
+$add = "call add_user_php('$prenume', '$nume', '$user', '$psw')";
+
     
+if(mysqli_query($conn, $add) ){
+     
     echo 'User succesfully added to database';
+    
+ 
+
 }
 else{
     echo 'error';
 }
 
-        
-      
+  
+var_dump($conn);
     

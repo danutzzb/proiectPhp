@@ -10,14 +10,14 @@ if(isset($_POST['email']) || isset($_POST['psw']) || isset($_POST['Login'])){
 }
 
 
-$query = "SELECT user FROM users WHERE user = '$user' AND password = '$psw'";
+$query = "SELECT nume_utilizator FROM contacte.utilizatori WHERE nume_utilizator = '$user' AND parola = '$psw' ";
 $data = mysqli_query($conn, $query);
 
 if(mysqli_num_rows($data)==1){
     
     $row = mysqli_fetch_array($data);
     
-    $user = $row['user'];
+    $user = $row['nume_utilizator'];
     
     echo  $user . ' succesfully connected to database';
 }
@@ -27,5 +27,5 @@ if(mysqli_num_rows($data)==1){
 }
 
 mysqli_fetch_array($data);
-
+var_dump($query);
 
