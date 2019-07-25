@@ -15,9 +15,8 @@ $add = "call add_user_php('$prenume', '$nume', '$user', '$psw')";
 if(mysqli_query($conn, $add) ){
      
     echo 'User succesfully added to database';
-    
+   
  
-
 }
 else{
     echo 'error';
